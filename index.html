@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beautiful GitHub Pages</title>
+  <meta name="description" content="A beautiful, modern HTML/CSS/JS template for GitHub Pages." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
+      --accent-2: #22c55e;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: radial-gradient(1200px 600px at 20% -10%, #1e293b, transparent),
+                  radial-gradient(800px 400px at 80% 10%, #020617, transparent),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      font-size: 1.05rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.75rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #60a5fa);
+      color: #020617;
+      box-shadow: 0 10px 30px rgba(56,189,248,0.35);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.35);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 1.6rem;
+      backdrop-filter: blur(10px);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(56,189,248,0.5);
+    }
+
+    .card h3 {
+      margin-bottom: 0.6rem;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer span {
+      color: var(--accent-2);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Beautiful GitHub Pages ✨</h1>
+    <p>
+      A clean, modern, and responsive HTML/CSS/JS starter you can deploy instantly
+      on GitHub Pages. No build tools. Just push and go.
+    </p>
+    <div class="actions">
+      <button class="btn btn-primary" onclick="scrollToFeatures()">See Features</button>
+      <a class="btn btn-secondary" href="https://github.com" target="_blank">View on GitHub</a>
+    </div>
+  </header>
+
+  <main id="features">
+    <div class="grid">
+      <div class="card">
+        <h3>⚡ Fast & Lightweight</h3>
+        <p>No frameworks required. Pure HTML, CSS, and a tiny bit of JavaScript.</p>
+      </div>
+      <div class="card">
+        <h3>🎨 Modern Design</h3>
+        <p>Glassmorphism, gradients, and smooth hover animations out of the box.</p>
+      </div>
+      <div class="card">
+        <h3>📱 Responsive</h3>
+        <p>Looks great on mobile, tablet, and desktop with zero extra effort.</p>
+      </div>
+      <div class="card">
+        <h3>🚀 GitHub Pages Ready</h3>
+        <p>Drop this in <code>index.html</code> and enable Pages in repo settings.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Built with <span>HTML • CSS • JS</span> — deploy on GitHub Pages in minutes.
+  </footer>
+
+  <script>
+    function scrollToFeatures() {
+      document.getElementById('features').scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  </script>
+
+</body>
+</html>
