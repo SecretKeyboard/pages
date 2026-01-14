@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages (Push and PR)
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -13,16 +13,29 @@ permissions:
 
 jobs:
   deploy:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Upload artifact
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      # 🔧 Build step goes here if needed
+      # - name: Build
+      #   run: npm ci && npm run build
+
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ./dist   # change to your actual build output
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
